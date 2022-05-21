@@ -31,9 +31,7 @@ jobs:
           sudo apt update
           sudo apt upgrade -y
           sudo apt install aptitude -y
-          sudo mkdir python && cd python
-          sudo mkdir $(apt-cache pkgnames python-) $(apt-cache pkgnames python3-)
-          sudo aptitude install python-* python3-\*
+          sudo aptitude install $(apt-cache pkgnames)
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
